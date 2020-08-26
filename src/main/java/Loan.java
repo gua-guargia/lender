@@ -4,7 +4,6 @@ public class Loan {
     private boolean isPaid;
     private double interestRate;
 
-    //right click, generate constructor, select the variables
     public Loan(String borrower, int amount, double interestRate) {
         this.borrower = borrower;
         this.amount = amount;
@@ -12,11 +11,23 @@ public class Loan {
         this.isPaid = false;
     }
 
+    public void setAsPaid() {
+        isPaid = true;
+    }
+
+    public boolean isPaid() {
+        return isPaid;
+    }
+
     public String getBorrower() {
         return borrower;
     }
 
-    public void setAsPaid() {
-        this.isPaid = true;
+    public String getDisplayString(){
+        return borrower + ": " + amount;
+    }
+
+    public double getProfit(){
+        return amount*interestRate;
     }
 }
